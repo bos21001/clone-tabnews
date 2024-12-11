@@ -4,7 +4,10 @@
   "description": "Implementing TabNews (www.tabnews.com.br) as a way to practice programming a bit more! 💻✨",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
   },
   "author": "",
   "license": "MIT",
