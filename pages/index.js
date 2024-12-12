@@ -1,5 +1,8 @@
+import React from 'react';
+import Welcome from '../components/welcome/Welcome';
+
 function Home() {
-    return <h1>Teste</h1>
+    return <Welcome />;
 }
 
 export default Home;

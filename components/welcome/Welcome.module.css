@@ -1,0 +1,28 @@
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+.title {
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    font-family: 'Arial', sans-serif;
+}
