@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
     render() {
         return (
-            <Html>
+            <Html lang="en-us">
                 <Head>
                     <meta name="description" content="Welcome to the future" />
                     <meta name="keywords" content="future, welcome" />
