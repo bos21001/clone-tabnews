@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 
 const translations = {
@@ -15,41 +15,8 @@ const translations = {
   },
 };
 
-export default function Home() {
-  const [theme, setTheme] = useState('light');
-  const [language, setLanguage] = useState('en');
-
-  useEffect(() => {
-    // Carregar o tema e idioma salvos no localStorage
-    const savedTheme = localStorage.getItem('theme');
-    const savedLanguage = localStorage.getItem('language');
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
-    }
-
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-    } else {
-      // Detectar o país do usuário
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          if (data.country_code === 'BR') {
-            setLanguage('pt');
-          } else {
-            setLanguage('en');
-          }
-        })
-        .catch(() => {
-          // Em caso de erro, manter inglês como padrão
-          setLanguage('en');
-        });
-    }
-  }, []);
+export default function Home({ theme, setTheme, language, setLanguage }) {
+  // Remover o useEffect relacionado ao tema e idioma
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
